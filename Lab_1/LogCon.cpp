@@ -51,11 +51,5 @@ bool XOR(bool a, bool b) {
 }
 
 bool Func18(bool a, bool b, bool c) {
-  bool x = XOR(a, b);
-  bool n = NOT(c);
-  bool y = IMP(b, n);
-  bool e = AND(x, y);
-  bool z = IMP(c, a);
-  bool r = IMP(e, z);
-  return r;
+  return IMP(AND(XOR(a, b), IMP(b, NOT(c))), IMP(c, a));
 }
